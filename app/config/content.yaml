@@ -1,0 +1,34 @@
+# Content Catalog Config
+
+movies:
+  - id: "tt0111161"
+    title: "The Shawshank Redemption"
+    type: "movie"
+    year: 1994
+    genres: ["Drama", "Crime"]
+    description: "Two imprisoned men bond over a number of years."
+    rating: 9.3
+    poster_url: "https://example.com/posters/shawshank.jpg"
+    trailer_url: "https://youtube.com/watch?v=6hB3S9bIaco"
+    cast: ["Tim Robbins", "Morgan Freeman"]
+    director: "Frank Darabont"
+    duration: 142
+    language: "English"
+    video_url: "https://example.com/videos/shawshank.mp4"
+    download_url: "https://example.com/downloads/shawshank.mp4"
+
+  - id: "tt0944947"
+    title: "Game of Thrones"
+    type: "tv"
+    year: 2011
+    genres: ["Drama", "Fantasy", "Adventure"]
+    description: "Nine noble families fight for control over the lands of Westeros."
+    rating: 9.2
+    poster_url: "https://example.com/posters/got.jpg"
+    trailer_url: "https://youtube.com/watch?v=KPLWWIOCOOQ"
+    cast: ["Emilia Clarke", "Kit Harington"]
+    director: "Various"
+    duration: 60
+    language: "English"
+    video_url: "https://example.com/videos/got.mp4"
+    download_url: "https://example.com/downloads/got.mp4"

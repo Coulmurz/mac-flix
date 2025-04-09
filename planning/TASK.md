@@ -6,7 +6,7 @@
 
 | ID   | Date       | Description                                   | Status     |
 |-------|------------|-----------------------------------------------|------------|
-| T001  | 2025-04-09 | Bootstrap project structure & documentation   | In Progress |
+| T001  | 2025-04-09 | Bootstrap project structure & documentation   | Done        |
 
 ---
 
@@ -14,7 +14,7 @@
 
 | ID    | Description                                         | Status     |
 |--------|-----------------------------------------------------|------------|
-| T002   | Design YAML schemas for content catalog & filters   | Pending    |
+| T002   | Design YAML schemas for content catalog & filters   | Done        |
 | T003   | Implement FastAPI backend MVP                       | Pending    |
 | T004   | Develop Streamlit frontend MVP                      | Pending    |
 | T005   | Integrate trailer playback                          | Pending    |
