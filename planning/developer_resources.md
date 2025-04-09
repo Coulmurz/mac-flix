@@ -18,7 +18,6 @@
 - **TMDB API (The Movie Database):** https://developers.themoviedb.org/3
   - Metadata, posters, trailers
   - Requires API key (store securely in `.env`)
-
 - **IMDb API (optional):** https://imdb-api.com/
 - **OMDb API (optional):** https://www.omdbapi.com/
 
@@ -49,8 +48,22 @@
 - **File System:** Local file management
 - **GitHub:** Repo management, code search
 
-_Update this file as new tools, APIs, or servers are integrated._
+---
+
+## Config & Schema
+
+- **YAML Config Files:**
+  - [`app/config/content.yaml`](../app/config/content.yaml) — Content catalog (movies, shows, metadata)
+  - [`app/config/categories.yaml`](../app/config/categories.yaml) — UI categories and filters
+  - [`app/config/secrets.yaml`](../app/config/secrets.yaml) — API keys and secrets
+
+- **Schema Documentation:**
+  - [`app/config/SCHEMA_DESIGN.md`](../app/config/SCHEMA_DESIGN.md) — Detailed schema design for all configs
+
+- **Validation:**
+  - All YAML configs are **validated with Pydantic models** at startup.
+  - Invalid configs will raise errors to prevent runtime issues.
 
 ---
 
-_Last updated: 2025-04-09_
+_Last updated: 2025-04-09 14:11 EDT_
