@@ -43,7 +43,7 @@ Detailed setup instructions will be added as development progresses.
 ## Roadmap
 
 - [x] Project scaffolding and documentation
-- [ ] YAML config schemas
+- [x] YAML config schemas
 - [ ] FastAPI backend MVP
 - [ ] Streamlit frontend MVP
 - [ ] Basic streaming and download
@@ -51,6 +51,22 @@ Detailed setup instructions will be added as development progresses.
 - [ ] Testing suite
 - [ ] Containerization with Podman
 - [ ] Future: User accounts, adaptive streaming, recommendations
+
+---
+
+## Config Files
+
+All domain logic and content metadata are externalized into YAML files:
+
+| Config File                   | Purpose                                         |
+|------------------------------|-------------------------------------------------|
+| `app/config/content.yaml`    | Content catalog: movies, TV shows, metadata     |
+| `app/config/categories.yaml` | UI categories and filters                       |
+| `app/config/secrets.yaml`    | API keys and secrets                            |
+
+See [Config Schema Design](app/config/SCHEMA_DESIGN.md) for detailed schema documentation.
+
+Update these files to customize content, filters, and API keys.
 
 ---
 
