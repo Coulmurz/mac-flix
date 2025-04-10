@@ -1,56 +1,55 @@
 # Mac Flix
 
-**Mac Flix** is a modular, config-driven MVP app for browsing, streaming, and downloading movies and TV shows, inspired by Netflix and Google Movies.
+**Mac Flix** is a modular, config-driven app for browsing, streaming, and downloading movies and TV shows, inspired by Netflix and Google Movies.
 
 ---
 
-## Features (MVP)
+## Features
 
 - Browse movies and TV shows categorized by type and genre
 - View metadata: title, poster, year, genre, description, rating, trailer link
 - Filter content with an intuitive filter bar
 - Watch trailers via embedded YouTube player
 - Stream or download video files
+- User accounts and watchlists (planned)
+- Adaptive streaming (HLS/DASH) (planned)
+- Cloud storage integration (planned)
+- Advanced search and scraping (planned)
+- Vector memory and agentic workflows (planned)
+- Multi-user access controls (planned)
+- Modern React/Vue frontend (planned)
+- Enhanced security and access management (planned)
 - Config-driven content catalog and UI
-- Built with **FastAPI** (backend) and **Streamlit** (frontend)
+- Built with **FastAPI** (backend) and **Streamlit** (prototype frontend)
 - Containerized with **Podman** for portability
 
 ---
 
 ## Architecture Overview
 
-- **Backend:** FastAPI serving metadata, streaming, and download endpoints
-- **Frontend:** Streamlit UI with embedded video and trailer players
+- **Backend:** FastAPI serving metadata, streaming, download, user, and search endpoints
+- **Frontend:** Streamlit UI (prototype), migrating to React/Vue
 - **Configs:** YAML files validated with Pydantic models
-- **Storage:** Local filesystem (MVP), expandable to cloud
+- **Storage:** Local filesystem (MVP), expandable to cloud storage
 - **Testing:** Pytest for unit and integration tests
+- **Containerization:** Podman with Dockerfile and Compose
 
 ---
 
-## Frontend (Streamlit)
+## Frontend
 
-The current frontend is a **Streamlit app** located in `app/frontend.py`. It features:
+Currently a **Streamlit app** (`app/frontend.py`) featuring:
 
-- A **mock-data-based home page** with 5 sample movies, each showing:
-  - Poster image
-  - Title, year, genres
-  - Description
-  - Rotten Tomatoes score
-- A **single-tab navigation** with:
-  - **View Details** button for each movie
-  - **Back Home** and **Previous** buttons in the details view
-- This is a **demo UI** using **hardcoded mock data** only.  
-  Integration with the FastAPI backend API is planned for future versions.
+- Mock-data-based home page with sample movies
+- Details page with metadata and trailer
+- Navigation with home/details views
 
-### Running the Streamlit Frontend
+### Planned Frontend
 
-From the project root, run:
-
-\`\`\`bash
-streamlit run app/frontend.py
-\`\`\`
-
-This will launch the My Flix home page in your browser.
+- Full React or Vue SPA
+- User authentication and watchlists
+- Adaptive streaming player
+- Advanced search and recommendations
 
 ---
 
@@ -69,21 +68,41 @@ All responses are JSON and validated with Pydantic models.
 
 ---
 
-## Setup (Outline)
+## Setup
 
 1. **Clone the repo**
-2. **Create and activate a Python 3.12+ virtual environment**
-3. **Install dependencies** (managed via pip-tools)
-4. **Create a `.env` file** with your API keys (see `.env.example`)
-5. **Run FastAPI backend**
-6. **Run Streamlit frontend**
+2. **Create a Python 3.12+ virtual environment**
 
-### API Keys
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+3. **Install dependencies**
+
+```bash
+pip install -r requirements.txt
+```
+
+4. **Create a `.env` file** with your API keys (see `.env.example`)
+5. **Build and run with Podman**
+
+```bash
+podman-compose build
+podman-compose up
+```
+
+6. Access:
+
+- FastAPI docs: [http://localhost:8000/docs](http://localhost:8000/docs)
+- Streamlit UI: [http://localhost:8501](http://localhost:8501)
+
+---
+
+## API Keys
 
 - **OMDB:** Required. Get a free key at [http://www.omdbapi.com/apikey.aspx](http://www.omdbapi.com/apikey.aspx)
 - **TMDB:** Deprecated, optional. If used, get a key at [https://www.themoviedb.org/settings/api](https://www.themoviedb.org/settings/api)
-
-Detailed setup instructions will be added as development progresses.
 
 ---
 
@@ -91,19 +110,24 @@ Detailed setup instructions will be added as development progresses.
 
 - [x] Project scaffolding and documentation
 - [x] YAML config schemas
-- [ ] FastAPI backend MVP
-- [ ] Streamlit frontend MVP
-- [ ] Basic streaming and download
-- [ ] Trailer integration
-- [ ] Testing suite
-- [ ] Containerization with Podman
-- [ ] Future: User accounts, adaptive streaming, recommendations
+- [x] FastAPI backend MVP
+- [x] Streamlit frontend MVP
+- [x] Basic streaming and download
+- [x] Trailer integration
+- [x] Testing suite
+- [x] Containerization with Podman
+- [ ] User accounts & watchlists
+- [ ] Adaptive streaming (HLS/DASH)
+- [ ] Cloud storage integration
+- [ ] Advanced search and scraping
+- [ ] Vector memory and agentic workflows
+- [ ] Multi-user access controls
+- [ ] Replace Streamlit with React/Vue frontend
+- [ ] Enhanced security and access management
 
 ---
 
 ## Config Files
-
-All domain logic and content metadata are externalized into YAML files:
 
 | Config File                   | Purpose                                         |
 |------------------------------|-------------------------------------------------|
@@ -112,8 +136,6 @@ All domain logic and content metadata are externalized into YAML files:
 | `app/config/secrets.yaml`    | API keys and secrets                            |
 
 See [Config Schema Design](app/config/SCHEMA_DESIGN.md) for detailed schema documentation.
-
-Update these files to customize content, filters, and API keys.
 
 ---
 

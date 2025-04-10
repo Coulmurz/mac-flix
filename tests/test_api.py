@@ -1,4 +1,4 @@
-lets do next """Pytest tests for Mac Flix FastAPI backend."""
+"""Pytest tests for Mac Flix FastAPI backend."""
 
 from fastapi.testclient import TestClient
 from app.main import app
@@ -61,6 +61,14 @@ def test_download_content_invalid():
 def test_tmdb_search():
     """Test TMDB search endpoint."""
     response = client.get("/tmdb/search", params={"query": "Inception", "media_type": "movie"})
+    assert response.status_code == 200
+    data = response.json()
+    assert "results" in data
+    assert isinstance(data["results"], list)
+
+def test_omdb_search():
+    """Test OMDB search endpoint."""
+    response = client.get("/omdb/search", params={"title": "Inception"})
     assert response.status_code == 200
     data = response.json()
     assert "results" in data

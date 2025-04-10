@@ -25,7 +25,7 @@ mock_movies = [
         "director": "Jane Doe",
         "duration": 120,
         "language": "English",
-        "trailer_url": ""
+        "trailer_url": "https://www.youtube.com/watch?v=sfM7_JLk-84"  # Wonder Woman 1984 trailer
     },
     {
         "id": 2,
@@ -39,7 +39,7 @@ mock_movies = [
         "director": "John Smith",
         "duration": 110,
         "language": "English",
-        "trailer_url": ""
+        "trailer_url": "https://www.youtube.com/watch?v=gmRKv7n2If8"  # Cruella trailer
     },
     {
         "id": 3,
@@ -53,7 +53,7 @@ mock_movies = [
         "director": "Sophie Lee",
         "duration": 95,
         "language": "French",
-        "trailer_url": ""
+        "trailer_url": "https://www.youtube.com/watch?v=0pdqf4P9MB8"  # La La Land trailer
     },
     {
         "id": 4,
@@ -67,7 +67,7 @@ mock_movies = [
         "director": "Mark Green",
         "duration": 130,
         "language": "English",
-        "trailer_url": ""
+        "trailer_url": "https://www.youtube.com/watch?v=ej3ioOneTy8"  # The Martian trailer
     },
     {
         "id": 5,
@@ -81,7 +81,7 @@ mock_movies = [
         "director": "Tom Orange",
         "duration": 85,
         "language": "English",
-        "trailer_url": ""
+        "trailer_url": "https://www.youtube.com/watch?v=tcdUhdOlz9M"  # The Hangover trailer
     }
 ]
 
@@ -167,6 +167,16 @@ def show_details():
     col1, col2 = st.columns([1, 2])
     with col1:
         st.image(movie["poster_url"], width=200)
+        # Additional info block
+        st.markdown(f"""
+**Year:** {movie['year']}  
+**Genres:** {', '.join(movie['genres'])}  
+**Duration:** {movie['duration']} min  
+**Language:** {movie['language']}  
+**Director:** {movie['director']}  
+**Cast:** {', '.join(movie['cast'])}  
+**Rating:** {movie['rating']}%  
+""")
     with col2:
         st.header(f"{movie['title']} ({movie['year']})")
         st.caption(f"{', '.join(movie['genres'])} | {movie['duration']} min | {movie['language']}")
@@ -174,8 +184,12 @@ def show_details():
         st.write(movie["description"])
         st.write(f"**Director:** {movie['director']}")
         st.write(f"**Cast:** {', '.join(movie['cast'])}")
-        # Placeholder trailer
-        st.video("https://www.w3schools.com/html/mov_bbb.mp4")
+        # Embed trailer if available, else fallback
+        trailer_url = movie.get("trailer_url")
+        if trailer_url:
+            st.video(trailer_url)
+        else:
+            st.video("https://www.w3schools.com/html/mov_bbb.mp4")
 
     st.markdown("---")
     st.subheader("Videos")
