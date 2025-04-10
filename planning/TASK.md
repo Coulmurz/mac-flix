@@ -16,11 +16,13 @@
 |--------|-----------------------------------------------------|------------|
 | T002   | Design YAML schemas for content catalog & filters   | Done        |
 | T003   | Implement FastAPI backend MVP                       | In Progress |
-| T004   | Develop Streamlit frontend MVP                      | Pending    |
+| T004   | Develop Streamlit frontend MVP                      | Done       |
 | T005   | Integrate trailer playback                          | Pending    |
 | T006   | Implement streaming & download endpoints            | Pending    |
 | T007   | Write unit & integration tests                      | Pending    |
 | T008   | Containerize with Podman                            | Pending    |
+
+| T009   | 2025-04-09 | Create mock-data-based home page with navigation | Done       |
 
 ---
 

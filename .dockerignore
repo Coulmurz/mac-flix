@@ -1,0 +1,34 @@
+whats # Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+.env.*
+
+# Git
+.git
+.gitignore
+
+# MacOS
+.DS_Store
+
+# Tests
+# tests/
+
+# Local data
+*.db
+*.sqlite
+*.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Pip cache
+pip-wheel-metadata/
+__pypackages__/

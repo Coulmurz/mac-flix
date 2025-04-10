@@ -27,14 +27,43 @@
 
 ---
 
+## Frontend (Streamlit)
+
+The current frontend is a **Streamlit app** located in `app/frontend.py`. It features:
+
+- A **mock-data-based home page** with 5 sample movies, each showing:
+  - Poster image
+  - Title, year, genres
+  - Description
+  - Rotten Tomatoes score
+- A **single-tab navigation** with:
+  - **View Details** button for each movie
+  - **Back Home** and **Previous** buttons in the details view
+- This is a **demo UI** using **hardcoded mock data** only.  
+  Integration with the FastAPI backend API is planned for future versions.
+
+### Running the Streamlit Frontend
+
+From the project root, run:
+
+\`\`\`bash
+streamlit run app/frontend.py
+\`\`\`
+
+This will launch the My Flix home page in your browser.
+
+---
+
 ## API Endpoints
 
-| Endpoint             | Method | Description                          |
-|----------------------|--------|--------------------------------------|
-| `/`                  | GET    | Welcome message                      |
-| `/content`           | GET    | List all movies and TV shows         |
-| `/content/{id}`      | GET    | Get metadata for a specific content  |
-| `/categories`        | GET    | List categories and filters          |
+| Endpoint                   | Method | Description                                         |
+|----------------------------|--------|-----------------------------------------------------|
+| `/`                        | GET    | Welcome message                                     |
+| `/content`                 | GET    | List all movies and TV shows                        |
+| `/content/{id}`            | GET    | Get metadata for a specific content                 |
+| `/categories`              | GET    | List categories and filters                         |
+| `/omdb/search?title=TITLE` | GET    | Search movies by title using OMDB API               |
+| `/tmdb/search`             | GET    | (Deprecated) Search TMDB for movies or TV shows     |
 
 All responses are JSON and validated with Pydantic models.
 
@@ -45,9 +74,14 @@ All responses are JSON and validated with Pydantic models.
 1. **Clone the repo**
 2. **Create and activate a Python 3.12+ virtual environment**
 3. **Install dependencies** (managed via pip-tools)
-4. **Configure content and API keys in YAML files**
+4. **Create a `.env` file** with your API keys (see `.env.example`)
 5. **Run FastAPI backend**
 6. **Run Streamlit frontend**
+
+### API Keys
+
+- **OMDB:** Required. Get a free key at [http://www.omdbapi.com/apikey.aspx](http://www.omdbapi.com/apikey.aspx)
+- **TMDB:** Deprecated, optional. If used, get a key at [https://www.themoviedb.org/settings/api](https://www.themoviedb.org/settings/api)
 
 Detailed setup instructions will be added as development progresses.
 

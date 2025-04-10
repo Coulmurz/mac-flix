@@ -8,8 +8,8 @@ movies:
     genres: ["Drama", "Crime"]
     description: "Two imprisoned men bond over a number of years."
     rating: 9.3
-    poster_url: "https://example.com/posters/shawshank.jpg"
-    trailer_url: "https://youtube.com/watch?v=6hB3S9bIaco"
+    poster_url: "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmRhMC00ZDJlLWFmNTEtODM1ZmRlY2RhYzY3XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_.jpg"
+    trailer_url: "https://www.youtube.com/embed/6hB3S9bIaco"
     cast: ["Tim Robbins", "Morgan Freeman"]
     director: "Frank Darabont"
     duration: 142
@@ -24,8 +24,8 @@ movies:
     genres: ["Drama", "Fantasy", "Adventure"]
     description: "Nine noble families fight for control over the lands of Westeros."
     rating: 9.2
-    poster_url: "https://example.com/posters/got.jpg"
-    trailer_url: "https://youtube.com/watch?v=KPLWWIOCOOQ"
+    poster_url: "https://m.media-amazon.com/images/M/MV5BMjI4MzY3NjYxMF5BMl5BanBnXkFtZTgwNzY1MTUwMzE@._V1_.jpg"
+    trailer_url: "https://www.youtube.com/embed/KPLWWIOCOOQ"
     cast: ["Emilia Clarke", "Kit Harington"]
     director: "Various"
     duration: 60

@@ -16,7 +16,7 @@ def load_content_config() -> List[ContentItem]:
     """Load and validate content catalog."""
     path = CONFIG_DIR / "content.yaml"
     data = load_yaml(path)
-    return [ContentItem(**item) for item in data]
+    return [ContentItem(**item) for item in data.get("movies", [])]
 
 def load_categories_config() -> CategoryConfig:
     """Load and validate categories and filters."""

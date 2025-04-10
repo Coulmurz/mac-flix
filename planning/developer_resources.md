@@ -40,6 +40,20 @@
 
 ---
 
+## Frontend (Streamlit)
+
+- The **Streamlit frontend** is located at `app/frontend.py`.
+- It currently uses **mock data** with 5 sample movies for demo purposes.
+- To run the frontend:
+
+\`\`\`bash
+streamlit run app/frontend.py
+\`\`\`
+
+- Backend API integration is planned for future versions.
+
+---
+
 ## Planned MCP Servers (Future)
 
 - **Brave Search:** Web search, news, articles
