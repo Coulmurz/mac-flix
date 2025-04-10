@@ -27,6 +27,19 @@
 
 ---
 
+## API Endpoints
+
+| Endpoint             | Method | Description                          |
+|----------------------|--------|--------------------------------------|
+| `/`                  | GET    | Welcome message                      |
+| `/content`           | GET    | List all movies and TV shows         |
+| `/content/{id}`      | GET    | Get metadata for a specific content  |
+| `/categories`        | GET    | List categories and filters          |
+
+All responses are JSON and validated with Pydantic models.
+
+---
+
 ## Setup (Outline)
 
 1. **Clone the repo**
