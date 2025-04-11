@@ -15,7 +15,7 @@
 | ID    | Description                                         | Status     |
 |--------|-----------------------------------------------------|------------|
 | T002   | Design YAML schemas for content catalog & filters   | Done        |
-| T003   | Implement FastAPI backend MVP                       | Pending    |
+| T003   | Implement FastAPI backend MVP                       | Done    |
 | T004   | Develop Streamlit frontend MVP                      | Pending    |
 | T005   | Integrate trailer playback                          | Pending    |
 | T006   | Implement streaming & download endpoints            | Pending    |
