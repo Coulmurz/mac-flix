@@ -1,0 +1,11 @@
+[Desktop Entry]
+X-SnapInstanceName=whatsapp-linux-app
+Name=whatsapp-linux-app
+X-SnapAppName=whatsapp-linux-app
+Exec=env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/whatsapp-linux-app_whatsapp-linux-app.desktop /snap/bin/whatsapp-linux-app %U
+Terminal=false
+Type=Application
+Icon=/snap/whatsapp-linux-app/2/meta/gui/icon.png
+StartupWMClass=whatsapp-linux-app
+Comment=An Unofficial desktop app for Whatsapp
+Categories=Network;TextTools;Office;GTK;GNOME;
