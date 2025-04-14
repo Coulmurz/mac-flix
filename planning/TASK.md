@@ -1,103 +1,51 @@
-# Mac Flix — Task Tracking
+# Task Management
 
----
-
-## Current Task
-
-| ID   | Date       | Description                                   | Status     |
-|-------|------------|-----------------------------------------------|------------|
-| T008  | 2025-04-11 | Containerize with Podman                      | Done       |
-
-# Mac Flix — Task Tracking
-
----
-
-## Current Task
-
-| ID   | Date       | Description                                   | Status     |
-|-------|------------|-----------------------------------------------|------------|
-| T011  | 2025-04-13 | Implement cloud storage integration           | Pending    |
-# Mac Flix — Task Tracking
-
----
-
-## Current Task
-
-| ID   | Date       | Description                                   | Status     |
-|-------|------------|-----------------------------------------------|------------|
-| T008  | 2025-04-11 | Containerize with Podman                      | Done       |
-
-# Mac Flix — Task Tracking
-
----
-
-## Current Task
-
-| ID   | Date       | Description                                   | Status     |
-|-------|------------|-----------------------------------------------|------------|
-| T008  | 2025-04-11 | Containerize with Podman                      | Pending    |
+This document serves as a task tracker for the Mac Flix project. It includes a list of tasks, their status, and any subtasks or TODOs discovered during the work. Tasks are prioritized and updated regularly to ensure project progress.
 
 ---
 
 ## Completed Tasks
 
-| ID    | Date       | Description                                   | Status     |
-|-------|------------|-----------------------------------------------|------------|
-| T001  | 2025-04-09 | Bootstrap project structure & documentation   | Done       |
-| T002  | 2025-04-10 | Design YAML schemas for content catalog & filters | Done   |
-| T003  | 2025-04-11 | Implement FastAPI backend MVP                 | Done       |
-| T004  | 2025-04-11 | Develop Streamlit frontend MVP                | Done       |
-| T005  | 2025-04-11 | Integrate trailer playback                    | Done       |
-| T006  | 2025-04-11 | Implement streaming & download endpoints      | Done       |
-| T007  | 2025-04-11 | Write unit & integration tests                | Done       |
-| T009  | 2025-04-13 | Configure Firecrawl API key in .env           | Done       |
-| T010  | 2025-04-13 | Initial setup and configuration for new feature branch | Done       |
-# Mac Flix — Task Tracking
+### Task 1: Update README.md with Firecrawl Integration Details
+- **Status:** Completed
+- **Date:** 13/04/2025
+- **Description:** Updated the README.md file to include details about the Firecrawl integration, including the API key configuration and usage.
+
+### Task 2: Update planning/developer_resources.md with Firecrawl MCP Server Information
+- **Status:** Completed
+- **Date:** 13/04/2025
+- **Description:** Updated the planning/developer_resources.md file to include information about the Firecrawl MCP server, its purpose, API key configuration, and usage.
 
 ---
 
-## Current Task
+## Pending Tasks
 
-| ID   | Date       | Description                                   | Status     |
-|-------|------------|-----------------------------------------------|------------|
-| T008  | 2025-04-11 | Containerize with Podman                      | Pending    |
+### Task 3: Containerization with Podman
+- **Status:** Pending
+- **Description:** Containerize the Mac Flix application using Podman for portability and reproducibility.
+- **Subtasks:**
+  - Create a Podmanfile for the application.
+  - Test the container locally.
+  - Update the README.md file with containerization instructions.
 
----
-
-## Completed Tasks
-
-| ID    | Date       | Description                                   | Status     |
-|-------|------------|-----------------------------------------------|------------|
-| T001  | 2025-04-09 | Bootstrap project structure & documentation   | Done       |
-| T002  | 2025-04-10 | Design YAML schemas for content catalog & filters | Done   |
-| T003  | 2025-04-11 | Implement FastAPI backend MVP                 | Done       |
-| T004  | 2025-04-11 | Develop Streamlit frontend MVP                | Done       |
-| T005  | 2025-04-11 | Integrate trailer playback                    | Done       |
-| T006  | 2025-04-11 | Implement streaming & download endpoints      | Done       |
-| T007  | 2025-04-11 | Write unit & integration tests                | Done       |
-| T009  | 2025-04-13 | Configure Firecrawl API key in .env           | Done       |
+### Task 4: Future Enhancements
+- **Status:** Pending
+- **Description:** Plan and implement future enhancements for the Mac Flix application.
+- **Subtasks:**
+  - User accounts and authentication.
+  - Adaptive streaming for better performance.
+  - Recommendation system for personalized content suggestions.
 
 ---
 
-## Upcoming Tasks
+## TODOs
 
-| ID    | Description                                         | Status     |
-|--------|-----------------------------------------------------|------------|
-| T008   | Containerize with Podman                            | Pending    |
-
----
-
-## Backlog / Future Features
-
-- User accounts, watchlists, recommendations
-- Adaptive streaming (HLS/DASH)
-- Cloud storage integration
-- Advanced search and scraping
-- Vector memory and agentic workflows
-- Multi-user access controls
-- Replace Streamlit with React/Vue frontend
-- Enhanced security and access management
+- **TODO 1:** Add more detailed instructions for setting up the project in the README.md file.
+- **TODO 2:** Update the testing suite to include tests for the Firecrawl integration.
+- **TODO 3:** Research and implement a secure method for storing API keys in the `.env` file.
 
 ---
 
-_Last updated: 2025-04-13_
+## License
+
+TBD
