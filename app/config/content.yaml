@@ -32,3 +32,24 @@ movies:
     language: "English"
     video_url: "https://example.com/videos/got.mp4"
     download_url: "https://example.com/downloads/got.mp4"
+    seasons:
+      - season_number: 1
+        episodes:
+          - episode_number: 1
+            title: "Winter Is Coming"
+            description: "Lord Eddard Stark is torn between his family and his duty when asked to serve at King Robert's side as Hand of the King."
+            poster_url: "https://example.com/posters/got_s1e1.jpg"
+          - episode_number: 2
+            title: "The Kingsroad"
+            description: "While Bran recovers from his fall, Ned travels to King's Landing with his daughters."
+            poster_url: "https://example.com/posters/got_s1e2.jpg"
+      - season_number: 2
+        episodes:
+          - episode_number: 1
+            title: "The North Remembers"
+            description: "War is raging across Westeros, and winter is approaching."
+            poster_url: "https://example.com/posters/got_s2e1.jpg"
+          - episode_number: 2
+            title: "The Night Lands"
+            description: "Tyrion investigates a potential mole in the Kingsguard."
+            poster_url: "https://example.com/posters/got_s2e2.jpg"

@@ -1,4 +1,6 @@
-fastapi
-uvicorn
-pydantic
-typing-extensions
+fastapi==0.115.12
+uvicorn==0.34.0
+pydantic==2.11.3
+typing-extensions==4.13.2
+PyYAML==6.0.2
+requests==2.32.3

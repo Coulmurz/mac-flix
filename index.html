@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mac Flix API Test</title>
+</head>
+<body>
+  <h1>Mac Flix API Test</h1>
+
+  <h2>/content</h2>
+  <div id="content"></div>
+
+  <h2>/categories</h2>
+  <div id="categories"></div>
+
+  <h2>/secrets/tmdb_api_key</h2>
+  <div id="tmdb_api_key"></div>
+
+  <h2>/omdb_api_key</h2>
+  <div id="omdb_api_key"></div>
+
+  <script>
+    async function fetchData(url, elementId) {
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        document.getElementById(elementId).innerHTML = JSON.stringify(data, null, 2);
+      } catch (error) {
+        console.error(`Error fetching data from ${url}:`, error);
+        document.getElementById(elementId).innerHTML = `Error: ${error}`;
+      }
+    }
+
+    fetchData('http://localhost:8000/content', 'content');
+    fetchData('http://localhost:8000/categories', 'categories');
+    fetchData('http://localhost:8000/secrets/tmdb_api_key', 'tmdb_api_key');
+    fetchData('http://localhost:8000/omdb_api_key', 'omdb_api_key');
+  </script>
+</body>
+</html>

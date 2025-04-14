@@ -34,9 +34,17 @@
 3. **Install dependencies** (managed via pip-tools)
 4. **Configure content and API keys in YAML files**
 5. **Run FastAPI backend**
+   ```bash
+   python app/main.py
+   ```
 6. **Run Streamlit frontend**
-
-Detailed setup instructions will be added as development progresses.
+   ```bash
+   streamlit run app/streamlit_app.py
+   ```
+7. **Run tests**
+   ```bash
+   pytest tests/
+   ```
 
 ---
 
@@ -46,10 +54,17 @@ Detailed setup instructions will be added as development progresses.
 - [x] YAML config schemas
 - [x] FastAPI backend MVP
   - Serves content, categories, and secrets via API endpoints
-- [ ] Streamlit frontend MVP
-- [ ] Basic streaming and download
-- [ ] Trailer integration
-- [ ] Testing suite
+- [x] Streamlit frontend MVP
+  - Fetches and displays content from the FastAPI backend
+- [x] Trailer integration
+  - Embedded YouTube player for trailers
+- [x] Basic streaming and download
+  - Stream and download movies and TV episodes
+  - Support for both local files and remote URLs
+- [x] Testing suite
+  - Unit tests for models and config loading
+  - Integration tests for API endpoints
+  - Utility test helpers for Streamlit app
 - [ ] Containerization with Podman
 - [ ] Future: User accounts, adaptive streaming, recommendations
 
@@ -68,6 +83,45 @@ All domain logic and content metadata are externalized into YAML files:
 See [Config Schema Design](app/config/SCHEMA_DESIGN.md) for detailed schema documentation.
 
 Update these files to customize content, filters, and API keys.
+
+---
+
+## API Endpoints
+
+The FastAPI backend provides the following endpoints:
+
+| Endpoint                                | Method | Description                                    |
+|----------------------------------------|--------|------------------------------------------------|
+| `/content`                              | GET    | Get all content items                          |
+| `/categories`                           | GET    | Get all categories                             |
+| `/content/{category_name}`              | GET    | Get content filtered by category               |
+| `/content/year/{year}`                  | GET    | Get content filtered by year                   |
+| `/stream/{content_id}`                  | GET    | Stream a movie or TV show                      |
+| `/download/{content_id}`                | GET    | Download a movie or TV show                    |
+| `/stream/episode/{content_id}/{season}/{episode}` | GET | Stream a specific episode of a TV show |
+
+---
+
+## Testing
+
+The project includes a comprehensive test suite using pytest:
+
+- **Model tests:** Validation of data models and YAML configuration loading
+- **API tests:** Verification of all API endpoints functionality
+- **Utility tests:** Helper functions for the Streamlit frontend
+
+To run the tests:
+
+```bash
+# Run all tests
+pytest tests/
+
+# Run specific test file
+pytest tests/test_models.py
+
+# Run with verbose output
+pytest -v tests/
+```
 
 ---
 
