@@ -16,6 +16,25 @@
 
 | ID   | Date       | Description                                   | Status     |
 |-------|------------|-----------------------------------------------|------------|
+| T011  | 2025-04-13 | Implement cloud storage integration           | Pending    |
+# Mac Flix — Task Tracking
+
+---
+
+## Current Task
+
+| ID   | Date       | Description                                   | Status     |
+|-------|------------|-----------------------------------------------|------------|
+| T008  | 2025-04-11 | Containerize with Podman                      | Done       |
+
+# Mac Flix — Task Tracking
+
+---
+
+## Current Task
+
+| ID   | Date       | Description                                   | Status     |
+|-------|------------|-----------------------------------------------|------------|
 | T008  | 2025-04-11 | Containerize with Podman                      | Pending    |
 
 ---
