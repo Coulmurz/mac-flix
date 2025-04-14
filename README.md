@@ -44,7 +44,8 @@ Detailed setup instructions will be added as development progresses.
 
 - [x] Project scaffolding and documentation
 - [x] YAML config schemas
-- [ ] FastAPI backend MVP
+- [x] FastAPI backend MVP
+  - Serves content, categories, and secrets via API endpoints
 - [ ] Streamlit frontend MVP
 - [ ] Basic streaming and download
 - [ ] Trailer integration
