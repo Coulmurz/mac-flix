@@ -40,6 +40,9 @@ def root():
 @app.get("/content", response_model=List[ContentItem])
 def get_all_content():
     """Get all content items."""
+    # Reload content on each request to ensure we get the latest data
+    global content_items
+    content_items = load_content_config()
     return content_items
 
 @app.get("/content/{item_id}", response_model=ContentItem)

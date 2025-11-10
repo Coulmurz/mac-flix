@@ -11,79 +11,75 @@ if "history" not in st.session_state:
 if "selected_item" not in st.session_state:
     st.session_state.selected_item = None
 
-# Mock data: 5 sample movies
-mock_movies = [
-    {
-        "id": 1,
-        "title": "The Great Adventure",
-        "poster_url": "https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",  # Wonder Woman 1984
-        "genres": ["Adventure", "Action"],
-        "description": "An epic journey across uncharted lands.",
-        "year": 2021,
-        "rating": 88,
-        "cast": ["Alice Smith", "Bob Johnson"],
-        "director": "Jane Doe",
-        "duration": 120,
-        "language": "English",
-        "trailer_url": ""
-    },
-    {
-        "id": 2,
-        "title": "Mystery of the Night",
-        "poster_url": "https://image.tmdb.org/t/p/w500/6MKr3KgOLmzOP6MSuZERO41Lpkt.jpg",  # Cruella
-        "genres": ["Mystery", "Thriller"],
-        "description": "A detective unravels a dark secret.",
-        "year": 2020,
-        "rating": 75,
-        "cast": ["Charlie Brown", "Diana Prince"],
-        "director": "John Smith",
-        "duration": 110,
-        "language": "English",
-        "trailer_url": ""
-    },
-    {
-        "id": 3,
-        "title": "Romance in Paris",
-        "poster_url": "https://image.tmdb.org/t/p/w500/9O1Iy9od7uGZ3m9M4f2R3G9C0bM.jpg",  # La La Land
-        "genres": ["Romance", "Drama"],
-        "description": "A love story set in the heart of Paris.",
-        "year": 2019,
-        "rating": 92,
-        "cast": ["Eve Adams", "Frank Miller"],
-        "director": "Sophie Lee",
-        "duration": 95,
-        "language": "French",
-        "trailer_url": ""
-    },
-    {
-        "id": 4,
-        "title": "Sci-Fi Odyssey",
-        "poster_url": "https://image.tmdb.org/t/p/w500/2mtQwJKVKQrZgTz49Dizb25eOQQ.jpg",  # The Martian
-        "genres": ["Science Fiction"],
-        "description": "Exploring the far reaches of the galaxy.",
-        "year": 2022,
-        "rating": 80,
-        "cast": ["George Lucas", "Hannah White"],
-        "director": "Mark Green",
-        "duration": 130,
-        "language": "English",
-        "trailer_url": ""
-    },
-    {
-        "id": 5,
-        "title": "Comedy Hour",
-        "poster_url": "https://image.tmdb.org/t/p/w500/5YUYg5q7QfC4IoNwNUtiwdiYKPr.jpg",  # The Hangover
-        "genres": ["Comedy"],
-        "description": "A hilarious collection of sketches.",
-        "year": 2018,
-        "rating": 70,
-        "cast": ["Ian Black", "Judy Blue"],
-        "director": "Tom Orange",
-        "duration": 85,
-        "language": "English",
-        "trailer_url": ""
-    }
-]
+import requests
+import time
+
+# Load real data from FastAPI backend with cache busting
+def load_content():
+    try:
+        # Add timestamp to prevent caching
+        response = requests.get(f"http://localhost:8000/content?t={int(time.time())}")
+        if response.status_code == 200:
+            content_data = response.json()
+            # Convert to the expected format for the frontend
+            mock_movies = []
+            for item in content_data:
+                mock_movies.append({
+                    "id": item["id"],
+                    "title": item["title"],
+                    "poster_url": item["poster_url"],
+                    "genres": item["genres"],
+                    "description": item["description"],
+                    "year": item["year"],
+                    "rating": int(item["rating"] * 10),  # Convert 9.3 to 93 for %
+                    "cast": item["cast"],
+                    "director": item["director"],
+                    "duration": item["duration"],
+                    "language": item["language"],
+                    "trailer_url": item["trailer_url"]
+                })
+            return mock_movies
+        else:
+            # Fallback to mock data if API fails
+            return get_mock_data()
+    except Exception as e:
+        # Fallback if requests module not available or API unreachable
+        return get_mock_data()
+
+def get_mock_data():
+    return [
+        {
+            "id": "tt0111161",
+            "title": "The Shawshank Redemption",
+            "poster_url": "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmRhMC00ZDJlLWFmNTEtODM1ZmRlY2RhYzY3XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_.jpg",
+            "genres": ["Drama", "Crime"],
+            "description": "Two imprisoned men bond over a number of years.",
+            "year": 1994,
+            "rating": 93,
+            "cast": ["Tim Robbins", "Morgan Freeman"],
+            "director": "Frank Darabont",
+            "duration": 142,
+            "language": "English",
+            "trailer_url": "https://www.youtube.com/embed/6hB3S9bIaco"
+        },
+        {
+            "id": "tt0944947",
+            "title": "Game of Thrones",
+            "poster_url": "https://m.media-amazon.com/images/M/MV5BMjI4MzY3NjYxMF5BMl5BanBnXkFtZTgwNzY1MTUwMzE@._V1_.jpg",
+            "genres": ["Drama", "Fantasy", "Adventure"],
+            "description": "Nine noble families fight for control over the lands of Westeros.",
+            "year": 2011,
+            "rating": 92,
+            "cast": ["Emilia Clarke", "Kit Harington"],
+            "director": "Various",
+            "duration": 60,
+            "language": "English",
+            "trailer_url": "https://www.youtube.com/embed/KPLWWIOCOOQ"
+        }
+    ]
+
+# Load content data
+mock_movies = load_content()
 
 def show_home():
     st.subheader("Welcome to My Flix!")

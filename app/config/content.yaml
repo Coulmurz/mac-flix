@@ -32,3 +32,99 @@ movies:
     language: "English"
     video_url: "https://example.com/videos/got.mp4"
     download_url: "https://example.com/downloads/got.mp4"
+
+  - id: "tt0110912"
+    title: "Pulp Fiction"
+    type: "movie"
+    year: 1994
+    genres: ["Crime", "Drama"]
+    description: "The lives of two mob hitmen, a boxer, a gangster and his wife intertwine in four tales of violence and redemption."
+    rating: 8.9
+    poster_url: "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg"
+    trailer_url: "https://www.youtube.com/embed/s7EdQ4FqbhY"
+    cast: ["John Travolta", "Uma Thurman", "Samuel L. Jackson"]
+    director: "Quentin Tarantino"
+    duration: 154
+    language: "English"
+    video_url: "https://example.com/videos/pulpfiction.mp4"
+    download_url: "https://example.com/downloads/pulpfiction.mp4"
+
+  - id: "tt0114369"
+    title: "Se7en"
+    type: "movie"
+    year: 1995
+    genres: ["Crime", "Drama", "Mystery"]
+    description: "Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his modus operandi."
+    rating: 8.6
+    poster_url: "https://m.media-amazon.com/images/M/MV5BOTUwODM5MTctZjczMi00OTk4LTg3NWUtNmVhMWFmNGQxNGFhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg"
+    trailer_url: "https://www.youtube.com/embed/znmZoVkCjpI"
+    cast: ["Brad Pitt", "Morgan Freeman", "Kevin Spacey"]
+    director: "David Fincher"
+    duration: 127
+    language: "English"
+    video_url: "https://example.com/videos/seven.mp4"
+    download_url: "https://example.com/downloads/seven.mp4"
+
+  - id: "tt0944948"
+    title: "Breaking Bad"
+    type: "tv"
+    year: 2008
+    genres: ["Crime", "Drama", "Thriller"]
+    description: "A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine."
+    rating: 9.5
+    poster_url: "https://m.media-amazon.com/images/M/MV5BYTU3NWI5OGMtZmZhNy00MjViLTk1YzMtZmFlY2EwMjZjMjVkXkEyXkFqcGdeQXVyODYyNzNhNTY@._V1_.jpg"
+    trailer_url: "https://www.youtube.com/embed/HhesaQXLuRY"
+    cast: ["Bryan Cranston", "Aaron Paul", "Anna Gunn"]
+    director: "Various"
+    duration: 49
+    language: "English"
+    video_url: "https://example.com/videos/breakingbad.mp4"
+    download_url: "https://example.com/downloads/breakingbad.mp4"
+
+  - id: "tt0108778"
+    title: "Friends"
+    type: "tv"
+    year: 1994
+    genres: ["Comedy", "Romance"]
+    description: "Follows the personal and professional lives of six friends living in Manhattan."
+    rating: 8.9
+    poster_url: "https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg"
+    trailer_url: "https://www.youtube.com/embed/I7ZBXHY2w34"
+    cast: ["Jennifer Aniston", "Courteney Cox", "Matthew Perry"]
+    director: "Various"
+    duration: 22
+    language: "English"
+    video_url: "https://example.com/videos/friends.mp4"
+    download_url: "https://example.com/downloads/friends.mp4"
+
+  - id: "tt0944949"
+    title: "The Sopranos"
+    type: "tv"
+    year: 1999
+    genres: ["Crime", "Drama"]
+    description: "New Jersey mob boss Tony Soprano deals with personal and professional issues in his home and business life."
+    rating: 9.2
+    poster_url: "https://m.media-amazon.com/images/M/MV5BZGJjYzhjYTYtMDBjYy00OWU1LTg5OTYtNmYwOTZmZjE3ZDdhXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg"
+    trailer_url: "https://www.youtube.com/embed/1flF0K0YzUk"
+    cast: ["James Gandolfini", "Lorraine Bracco", "Edie Falco"]
+    director: "Various"
+    duration: 55
+    language: "English"
+    video_url: "https://example.com/videos/sopranos.mp4"
+    download_url: "https://example.com/downloads/sopranos.mp4"
+
+  - id: "tt0944950"
+    title: "Stranger Things"
+    type: "tv"
+    year: 2016
+    genres: ["Drama", "Fantasy", "Horror"]
+    description: "When a young boy disappears, his mother, a police chief and his friends must confront terrifying supernatural forces."
+    rating: 8.7
+    poster_url: "https://m.media-amazon.com/images/M/MV5BMDZkYmVhNjMtNWU4NS00ODhhLWFhMjQtYzJiYTViZTgyZjIzXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
+    trailer_url: "https://www.youtube.com/embed/XWxyRG_tckY"
+    cast: ["Millie Bobby Brown", "Finn Wolfhard", "David Harbour"]
+    director: "Various"
+    duration: 51
+    language: "English"
+    video_url: "https://example.com/videos/strangerthings.mp4"
+    download_url: "https://example.com/downloads/strangerthings.mp4"
